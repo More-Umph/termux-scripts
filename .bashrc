@@ -16,7 +16,7 @@ if ! command -v zsh; then
     mkdir .termux
     cp '.local/share/fonts/Ubuntu Mono derivative Powerline.ttf' .termux/font.ttf
     mkdir -P .config/nvim
-    curl "https://raw.githubusercontent.com/MoreUmph/termux-config/master/init.vim" -o ${NVIM}/init.vim
+    curl "https://raw.githubusercontent.com/MoreUmph/termux-config/master/init.vim" -o .config/nvim/init.vim
     termux-reload-settings
 
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
