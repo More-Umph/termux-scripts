@@ -6,16 +6,14 @@ if ! command -v zsh; then
         termux-setup-storage
     fi
 
-    for PACKAGE in "git htop neovim python rust openssl termux-api build-essential"; do
-        pkg install $PACKAGE -y
-    done
+    pkg install git htop neovim python rust openssl termux-api build-essential -y
 
     git clone https://github.com/powerline/fonts.git --depth=1
     cd fonts && ./install.sh
     cd .. && echo yes | rm -rd fonts
     mkdir .termux
     cp '.local/share/fonts/Ubuntu Mono derivative Powerline.ttf' .termux/font.ttf
-    mkdir -P .config/nvim
+    mkdir -p .config/nvim
     curl "https://raw.githubusercontent.com/MoreUmph/termux-config/master/init.vim" -o .config/nvim/init.vim
     termux-reload-settings
 
