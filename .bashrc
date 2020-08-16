@@ -16,8 +16,7 @@ if ! command -v zsh; then
     cp '.local/share/fonts/Ubuntu Mono derivative Powerline.ttf' .termux/font.ttf
     termux-reload-settings
 
-    curl "https://raw.githubusercontent.com/More-Umph/termux-scripts/master/.zshrc" -o .zshrc
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh && curl https://raw.githubusercontent.com/More-Umph/termux-scripts/master/.zshrc -o .zshrc)"
 else
     zsh
 fi
